@@ -1,0 +1,215 @@
+body {
+  font-family: "Segoe UI", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f9f9f9;
+  color: #333;
+}
+
+.navbar {
+  background-color: #0077cc;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.nav-links a.btn-nav:hover {
+  background-color: #005fa3;
+}
+
+.navbar .nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.hero {
+  text-align: center;
+  padding: 2rem;
+  background-color: #e6f2ff;
+}
+
+.video-slider {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  background-color: #000;
+  padding: 1rem 0;
+}
+
+.video-slider video {
+  width: 90%;
+  max-width: 1000px;
+  height: auto;
+  border-radius: 12px;
+  border: 3px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.section-box {
+  background: white;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 2rem auto;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.05);
+}
+
+video {
+  width: 45%;
+  margin: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+}
+/* Existing styles remain above this */
+
+.video-slider-container {
+  position: relative;
+  width: 90%;
+  max-width: 960px;
+  margin: 2rem auto;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#videoSlider {
+  width: 100%;
+  border-radius: 10px;
+  transition: opacity 0.5s ease;
+}
+
+/* Fade animations */
+.fade-out {
+  opacity: 0;
+}
+
+.fade-in {
+  opacity: 1;
+}
+
+/* Navigation arrows */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(156, 169, 178, 0.8);
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.3s;
+}
+
+.arrow:hover {
+  background: rgba(0, 119, 204, 1);
+}
+
+.left-arrow {
+  left: 10px;
+}
+
+.right-arrow {
+  right: 10px;
+}
+
+
+input[type="text"], input[type="file"] {
+  padding: 0.6rem;
+  width: 60%;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-top: 0.5rem;
+}
+
+button {
+  padding: 0.6rem 1rem;
+  margin-left: 0.5rem;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#record-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+#record-list li {
+  background-color: #e6f7ff;
+  padding: 0.5rem;
+  margin: 0.3rem 0;
+  border-radius: 6px;
+  word-wrap: break-word;
+}
+
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #0077cc;
+  color: white;
+  margin-top: 3rem;
+}
+.prescription-list {
+  list-style-type: none;
+  padding-left: 0;
+  font-size: 1rem;
+}
+
+.prescription-list li {
+  margin: 0.5rem 0;
+  background-color: #e6f7ff;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+}
+
+.prescription-list a {
+  text-decoration: none;
+  color: #0077cc;
+  font-weight: 500;
+}
+
+.prescription-list a:hover {
+  text-decoration: underline;
+}
+.back-button {
+  margin-bottom: 1rem;
+  background-color: #0077cc;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.back-button:hover {
+  background-color: #005fa3;
+}
