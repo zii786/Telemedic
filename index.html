@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Telemedicine Platform</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">🩺 TeleHealth</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+
+      <li><a href="video-call.html">Video Call</a></li>
+      <li><a href="prescriptions.html">Prescription</a></li>
+      <li><a href="login.html" class="btn-nav">Login</a></li>
+      <li><a href="signup.html" class="btn-nav">Signup</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero / Banner -->
+  <header class="hero">
+    <h1>Welcome to TeleHealth</h1>
+    <p>Connect with doctors instantly from anywhere.</p>
+  </header>
+
+  <!-- Video Slider -->
+  <div class="video-slider-container">
+    <video id="videoSlider" muted autoplay></video>
+    <button class="arrow left-arrow" onclick="prevVideo()">&#8592;</button>
+    <button class="arrow right-arrow" onclick="nextVideo()">&#8594;</button>
+  </div>
+
+  <!-- Health Records Section -->
+  <section id="records" class="section-box">
+    <h2>Health Records</h2>
+    <input type="file" id="record-input" accept=".pdf,image/*" />
+    <button onclick="uploadRecord()">Upload Record</button>
+    <ul id="record-list"></ul>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 TeleHealth. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const videoFiles = [
+      "vids/doc1.mp4",
+      "vids/doc2.mp4",
+      "vids/doc3.mp4"
+    ];
+    const videoSlider = document.getElementById("videoSlider");
+    let currentVideo = 0;
+
+    function fadeOutIn(callback) {
+      videoSlider.classList.add("fade-out");
+      setTimeout(() => {
+        callback();
+        videoSlider.classList.remove("fade-out");
+        videoSlider.classList.add("fade-in");
+        setTimeout(() => videoSlider.classList.remove("fade-in"), 500);
+      }, 500);
+    }
+
+    function playVideoLoop() {
+      fadeOutIn(() => {
+        videoSlider.src = videoFiles[currentVideo];
+        videoSlider.play();
+        currentVideo = (currentVideo + 1) % videoFiles.length;
+      });
+    }
+
+    function nextVideo() {
+      currentVideo = (currentVideo + 1) % videoFiles.length;
+      playVideoLoop();
+    }
+
+    function prevVideo() {
+      currentVideo = (currentVideo - 1 + videoFiles.length) % videoFiles.length;
+      playVideoLoop();
+    }
+
+    playVideoLoop(); 
+    setInterval(playVideoLoop, 5000);
+
+    function uploadRecord() {
+      const input = document.getElementById("record-input");
+      const list = document.getElementById("record-list");
+      if (input.files.length > 0) {
+        const li = document.createElement("li");
+        li.textContent = input.files[0].name;
+        list.appendChild(li);
+        input.value = "";
+      }
+    }
+  </script>
+
+</body>
+</html>

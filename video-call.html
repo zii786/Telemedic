@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Video Call - TeleHealth</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">🩺 TeleHealth</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#video-call" class="active">Video Call</a></li>
+      <li><a href="prescriptions.html" class="btn-nav">Prescription</a></li>
+      <li><a href="login.html" class="btn-nav">Login</a></li>
+      <li><a href="signup.html" class="btn-nav">Signup</a></li>
+    </ul>
+  </nav>
+x
+  <!-- Video Call Section -->
+  <section id="video-call" class="section-box">
+    <h2>Secure Video Call</h2>
+    <video id="local-video" autoplay muted></video>
+    <video id="remote-video" autoplay></video>
+    <input type="text" id="peer-id-input" placeholder="Enter Peer ID" />
+    <button onclick="startCall()">Start Call</button>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 TeleHealth. All rights reserved.</p>
+  </footer>
+
+  <script src="https://unpkg.com/peerjs@1.4.7/dist/peerjs.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
